@@ -64,7 +64,16 @@ fi
 rustup target add "$RUSTTARGET" >&2
 
 
-BINARIES="$(cargo read-manifest | jq -r ".targets[] | select(.kind[] | contains(\"bin\")) | .name")"
+BINARIES=$(
+  cargo metadata --no-deps --format-version 1 \
+  | jq -r '.packages[].manifest_path' \
+  | while IFS= read -r manifest; do
+      cargo read-manifest --manifest-path "$manifest" \
+      | jq -r '.targets[] | select(.kind[] | contains("bin")) | .name'
+    done \
+  | tr '\n' ' ' \
+  | sed 's/[[:space:]]*$//'
+)
 
 OUTPUT_LIST=""
 for BINARY in $BINARIES; do
