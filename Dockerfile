@@ -9,7 +9,7 @@ LABEL "maintainer"="Douile <25043847+Douile@users.noreply.github.com>"
 RUN apk add --no-cache curl jq git build-base bash zip tar xz zstd upx
 
 # Add windows dependencies
-RUN apk add --no-cache mingw-w64-gcc
+RUN apk add --no-cache mingw-w64-x86_64-gcc
 
 # Add apple dependencies
 RUN apk add --no-cache clang cmake libxml2-dev openssl-dev musl-fts-dev bsd-compat-headers
