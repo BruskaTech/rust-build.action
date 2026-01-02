@@ -1,7 +1,7 @@
 # (Unofficial) Rust Release Binary Github Action
 
-[![.github/workflows/build.yml](https://github.com/rust-build/rust-build.test/actions/workflows/build.yml/badge.svg)](https://github.com/rust-build/rust-build.test/actions/workflows/build.yml)
-[![Lint](https://github.com/rust-build/rust-build.action/actions/workflows/linter.yml/badge.svg)](https://github.com/rust-build/rust-build.action/actions/workflows/linter.yml)
+[![.github/workflows/build.yml](https://github.com/BruskaTech/rust-build.test/actions/workflows/build.yml/badge.svg)](https://github.com/BruskaTech/rust-build.test/actions/workflows/build.yml)
+[![Lint](https://github.com/BruskaTech/rust-build.action/actions/workflows/linter.yml/badge.svg)](https://github.com/BruskaTech/rust-build.action/actions/workflows/linter.yml)
 
 _Disclamer: this project has no affiliation with the official Rust project or trademark._
 
@@ -10,7 +10,7 @@ Actions (Based on
 [go-release.action](https://github.com/ngs/go-release.action))
 
 For an example/template repo see
-[rust-build.test](https://github.com/rust-build/rust-build.test)
+[rust-build.test](https://github.com/BruskaTech/rust-build.test)
 
 This action will only work when you release a project as it uploads the
 artifacts to the release.
@@ -56,7 +56,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Compile and release
-        uses: rust-build/rust-build.action@v1.4.5
+        uses: BruskaTech/rust-build.action@v1.4.5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -93,7 +93,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Compile and release
-        uses: rust-build/rust-build.action@v1.4.5
+        uses: BruskaTech/rust-build.action@v1.4.5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -119,7 +119,7 @@ jobs:
       - uses: actions/checkout@master
       - name: Compile
         id: compile
-        uses: rust-build/rust-build.action@v1.4.5
+        uses: BruskaTech/rust-build.action@v1.4.5
         with:
           RUSTTARGET: x86_64-unknown-linux-musl
           UPLOAD_MODE: none
@@ -150,7 +150,7 @@ linking with
 ```yml
       - name: Compile
         id: compile
-        uses: rust-build/rust-build.action@v1.4.5
+        uses: BruskaTech/rust-build.action@v1.4.5
         with:
           RUSTTARGET: x86_64-unknown-linux-musl
           STATIC_LINKING: false
