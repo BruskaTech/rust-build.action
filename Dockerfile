@@ -1,4 +1,4 @@
-FROM rust:1.76.0-alpine3.19
+FROM rust:1.92.0-alpine3.23
 
 LABEL "name"="Automate publishing Rust build artifacts for GitHub releases through GitHub Actions"
 LABEL "version"="latest"
@@ -9,7 +9,7 @@ LABEL "maintainer"="Douile <25043847+Douile@users.noreply.github.com>"
 RUN apk add --no-cache curl jq git build-base bash zip tar xz zstd upx
 
 # Add windows dependencies
-RUN apk add --no-cache mingw-w64-x86_64-gcc
+RUN apk add --no-cache zig
 
 # Add apple dependencies
 RUN apk add --no-cache clang cmake libxml2-dev openssl-dev musl-fts-dev bsd-compat-headers
