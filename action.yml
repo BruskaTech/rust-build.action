@@ -1,4 +1,4 @@
-name: 'Rust Release binary'
+name: 'Rust Release binaries - BruskaTech'
 description: 'Automate publishing Rust build artifacts for GitHub releases through GitHub Actions'
 branding:
   icon: 'box'
